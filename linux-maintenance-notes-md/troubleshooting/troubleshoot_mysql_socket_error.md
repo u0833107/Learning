@@ -8,6 +8,7 @@ MySQL Socket異常但服務仍啟動—排查流程筆記
 MySQL 的啟動條件僅檢查主程式 mysqld 是否成功執行。
 即使 socket 檔案無法建立，只要沒有 crash，systemd 還是會顯示「Active: running」。
 但 client 端（如 mysql CLI）無法透過指定 socket 連線，就會報錯。
+
 驗證方式
 1. 確認服務是否啟動：
  sudo systemctl status mysql

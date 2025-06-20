@@ -37,4 +37,5 @@ session closed – 指令執行結束
 |     dow(第五個*號)    |           星期幾（0=Sun）          |
 |          user         |     要用誰的身分執行（如 root）    |
 |         command       |             要執行的指令           |
+
 ！推薦使用/etc/crontab執行高權限維運任務（如 systemctl、mysqldump、rsync 等）！

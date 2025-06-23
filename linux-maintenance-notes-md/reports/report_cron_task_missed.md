@@ -1,6 +1,8 @@
 系統維運事件報告：cron任務未執行
 
-發生時間：2025/06/04 11:50(UTC+8)
+發生時間
+
+2025/06/04 11:50(UTC+8)
 
 問題現象
 
@@ -11,11 +13,11 @@
 
 使用以下指令查看cron服務狀態
 
-sudo systemctl status cron
+`sudo systemctl status cron`
 
 檢查腳本檔案是否具備執行權限，使用以下指令：
 
-ls -l /home/milly/cron_test.sh
+`ls -l /home/milly/cron_test.sh`
 
 發現cron_test.sh腳本的權限為-rw-rw-r--沒有執行權限
 
@@ -29,15 +31,15 @@ ls -l /home/milly/cron_test.sh
 
 將cron_test.sh腳本加上執行權限
 
-sudo chmod +x /home/milly/cron_test.sh
+`sudo chmod +x /home/milly/cron_test.sh`
 
 確認腳本目前權限
 
-ls -l /home/milly/cron_test.sh
+`ls -l /home/milly/cron_test.sh`
 
 等待5~10分鐘，確認cron_test.log裡有內容
 
-cat /home/milly/cron_test.log
+`cat /home/milly/cron_test.log`
 
 
 證據記錄：
@@ -63,9 +65,9 @@ Log記錄CRON[3104](milly) CMD (/home/milly/cron_test.sh)排程有執行
 
 後續建議
 
-腳本建立完後用ls確認腳本權限
+1. 腳本建立完後用ls確認腳本權限
 
-未來可在腳本建立完成後使用 ./script.sh 測試是否可正常執行，避免部署進入排程前已無效。
+2. 未來可在腳本建立完成後使用 ./script.sh 測試是否可正常執行，避免部署進入排程前已無效。
 
 
 

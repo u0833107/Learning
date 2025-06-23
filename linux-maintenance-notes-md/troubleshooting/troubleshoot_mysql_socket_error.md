@@ -3,8 +3,8 @@ MySQL Socket異常但服務仍啟動—排查流程筆記
 
 情境描述
 將 MySQL 的 socket 設定為不存在的路徑（如 /this/path/does/not/exist/mysql.sock）後：
-- 使用 sudo systemctl restart mysql，服務仍顯示啟動成功
-- 使用 sudo mysql --protocol=socket 則報錯無法連線
+- 使用 `sudo systemctl restart mysql`，服務仍顯示啟動成功
+- 使用 `sudo mysql --protocol=socket` 則報錯無法連線
 
 問題核心解析
 MySQL 的啟動條件僅檢查主程式 mysqld 是否成功執行。

@@ -13,7 +13,7 @@
 
 利用systemctl指令確認MySQL服務狀態
 
-sudo systemctl status mysql
+`sudo systemctl status mysql`
 
 發現MySQL服務狀態顯示inactive(dead)
 
@@ -29,11 +29,11 @@ MySQL服務未啟動，導致無法透過預設 socket 成功建立本機連線�
 
 使用下列指令啟動mysql服務
 
-sudo systemctl start mysql
+`sudo systemctl start mysql`
 
 執行下列指令確認服務狀態為active
 
-sudo sysytemctl status mysql
+`sudo sysytemctl status mysql`
 
 再次使用mysql指令已可以正常連線
 
@@ -49,10 +49,10 @@ sudo sysytemctl status mysql
 
 後續建議
 
-1.建議設定MySQL為開機時自動啟動服務
+1. 建議設定MySQL為開機時自動啟動服務
 
-sudo systemctl enable mysql
+ `sudo systemctl enable mysql`
 
-2.可撰寫建議監控腳本檢查服務是否存活並在異常時進行重啟 
+2. 可撰寫建議監控腳本檢查服務是否存活並在異常時進行重啟 
 
-3.若有頻繁手動停啟需求，應建立內部 SOP 並強化切換流程紀錄
+3. 若有頻繁手動停啟需求，應建立內部 SOP 並強化切換流程紀錄

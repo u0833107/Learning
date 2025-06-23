@@ -51,7 +51,7 @@ MySQL服務未啟動，導致無法透過預設 socket 成功建立本機連線�
 
 1. 建議設定MySQL為開機時自動啟動服務
 
- `sudo systemctl enable mysql`
+   `sudo systemctl enable mysql`
 
 2. 可撰寫建議監控腳本檢查服務是否存活並在異常時進行重啟 
 

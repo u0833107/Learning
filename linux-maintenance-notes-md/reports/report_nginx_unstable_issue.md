@@ -11,26 +11,28 @@
 處理過程
 
 使用下列指令確認nginx服務狀態
-sudo systemctl status nginx
+
+`sudo systemctl status nginx`
+
 發現nginx狀態顯示inactive
 
 啟動nginx服務
 
-sudo systemctl start nginx
+`sudo systemctl start nginx`
 
 出現錯誤Job for nginx.service failed because control process exited with error code
 
 利用下列指令修正設定檔
 
-sudo nano /etc/nginx/nginx.conf
+`sudo nano /etc/nginx/nginx.conf`
 
 將錯誤程式碼bad_directive_purpose刪除
 
 再次啟動nginx服務
 
-sudo systemctl start nginx
+`sudo systemctl start nginx`
 
-利用nginx -t驗證避免錯誤
+利用`nginx -t`驗證避免錯誤
 
 測試連線
 

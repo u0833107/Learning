@@ -1,4 +1,5 @@
 Day 11：排程實戰 & 除錯總整理筆記
+
 三種 crontab 使用場景比較
 |        類型        |      位置/編輯方式     |     執行者設定    |         適用場景         |                         優缺點                         |
 |:------------------:|:----------------------:|:-----------------:|:------------------------:|:------------------------------------------------------:|
@@ -8,25 +9,34 @@ Day 11：排程實戰 & 除錯總整理筆記
 
 
 systemctl 在 crontab 中常見錯誤
-|            問題現象           |                       常見原因                     |                          解法建議                         |   |   |
-|:-----------------------------:|:--------------------------------------------------:|:---------------------------------------------------------:|:-:|:-:|
-|      指令沒被執行、無反應     |     指令使用相對路徑，cron   環境缺少 PATH         |     使用完整路徑`/usr/bin/systemctl`                      |   |   |
-|      sudo: no tty present     |     在user crontab 中使用'sudo'且未配置sudoers     |     避免用sudo，改用root crontab或 `/etc/crontab`         |   |   |
-|     nginx未啟動，log無紀錄    |     crontab被寫進錯帳號/未儲存/cron沒啟動          |     使用`sudo crontab -l`和`systemctl status cron`確認    |   |   |
-|      crontab已設定但cron沒跑  |     cron daemon未啟動/寫入時間與時區不符           |     用`date`+`timedatectl`確認時區，啟動`cron`服務        |   |   |
-|        log沒顯示執行紀錄      |     Ubuntu 24.04預設cron log不進/var/log/syslog    |     使用journalctl -u cron`查實際執行紀錄                 |   |   |
+|              問題現象             |                          常見原因                        |                             解法建議                            |
+|:---------------------------------:|:--------------------------------------------------------:|:---------------------------------------------------------------:|
+|        指令沒被執行、無反應       |     指令使用相對路徑，cron   環境缺少 PATH               |     使用完整路徑   `/usr/bin/systemctl`                         |
+|        sudo: no tty present       |     在 user   crontab 中使用 `sudo` 且未配置 sudoers     |     避免用 sudo，改用   root crontab 或 `/etc/crontab`          |
+|      nginx 未啟動，log 無紀錄     |     crontab 被寫進錯帳號 / 未儲存 / cron 沒啟動          |     使用 `sudo   crontab -l` 和 `systemctl status cron` 確認    |
+|     crontab 已設定但 cron 沒跑    |     cron daemon 未啟動 / 寫入時間與時區不符              |     用 `date` +   `timedatectl` 確認時區，啟動 `cron` 服務      |
+|         log 沒顯示執行紀錄        |     Ubuntu   24.04 預設 cron log 不進/var/log/syslog`    |     使用   `journalctl -u cron` 查實際執行紀錄                  |
 
 journalctl log 解讀技巧
-使用指令：sudo journalctl -u cron --since "10 minutes ago"
+
+使用指令：`sudo journalctl -u cron --since "10 minutes ago"`
+
 常見 log 類型說明：
+
 session opened for user root – 排程準備執行（已啟動）
+
 CMD (...) – 實際執行的指令內容（成功排入）
+
 session closed – 指令執行結束
+
 ❗️若只看到 session 沒看到 CMD ➜ 排程內容沒正確執行！
 
 /etc/crontab 範本與說明
+
 範例：
+
 30 2 * * * root /usr/bin/systemctl restart nginx
+
 欄位意義：
 |          欄位         |                 意義               |
 |:---------------------:|:----------------------------------:|

@@ -29,9 +29,9 @@ MySQL 3306 未監聽問題 - 完整排查與修正報告
 
  skip-networking = 0
 
-3. 儲存後重啟 MySQL：sudo systemctl restart mysql
+3. 儲存後重啟 MySQL：`sudo systemctl restart mysql`
 
-4. 使用 sudo ss -tulnp | grep 3306 驗證監聽狀態
+4. 使用 `sudo ss -tulnp | grep 3306` 驗證監聽狀態
 
 
 修正結果
@@ -40,8 +40,8 @@ MySQL 3306 未監聽問題 - 完整排查與修正報告
 
 建議的安全性補強（UFW）
 
-- 僅允許內網存取：sudo ufw allow from 10.0.2.0/24 to any port 3306
+- 僅允許內網存取：`sudo ufw allow from 10.0.2.0/24 to any port 3306`
 
-- 阻擋其他來源：sudo ufw deny 3306
+- 阻擋其他來源：`sudo ufw deny 3306`
 
 （本報告可作為未來遇到類似問題的參考案例）

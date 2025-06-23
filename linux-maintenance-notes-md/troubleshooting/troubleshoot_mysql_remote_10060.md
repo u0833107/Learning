@@ -4,7 +4,7 @@ MySQL 遠端連線錯誤排查 - (10060) 無法連線
 
 使用 Windows PowerShell 嘗試從主機連線至 VirtualBox 虛擬機中的 MySQL：
 
-指令：mysql -u remotedb -h 10.0.2.15 -p
+指令：`mysql -u remotedb -h 10.0.2.15 -p`
 
 錯誤訊息：Error 2003 (HY000): Can't connect to MySQL server on '10.0.2.15' (10060)
 
@@ -27,7 +27,7 @@ MySQL 遠端連線錯誤排查 - (10060) 無法連線
  - 客體連接埠：3306
 
 2. 從主機改用以下連線指令：
- mysql -u remotedb -h 127.0.0.1 -P 13306 -p
+ `mysql -u remotedb -h 127.0.0.1 -P 13306 -p`
 備註
 若使用橋接模式（非 NAT），可使用虛擬機實際 IP（如 10.0.2.15）連線，但建議初學者保留 NAT 並使用 Port Forwarding 控制連線。
 

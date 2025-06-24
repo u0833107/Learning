@@ -2,7 +2,7 @@
 
 備份 MySQL 資料庫
 
-sudo mysqldump linux_practice > home/deployuser/linux_practice_bakup.sql
+`sudo mysqldump linux_practice > home/deployuser/linux_practice_bakup.sql`
 
 mysqldump：MySQL的備份工具
 
@@ -14,9 +14,9 @@ linux_practice：要備份的資料庫名稱
 
 輸入以下兩個指令
 
-ls -lh /home/deployuser/linux_practice_bakup.sql
+`ls -lh /home/deployuser/linux_practice_bakup.sql`
 
-head /home/deployuser/linux_practice_bakup.sql
+`head /home/deployuser/linux_practice_bakup.sql`
 
 會看到以下以下內容
 
@@ -34,15 +34,17 @@ INSERT INTO ...
 
 還原.sql檔案(模擬災害復原)
 
-DROP DATABASE linux_practice;   //刪除資料庫
+```bash
+DROP DATABASE linux_practice;`   //刪除資料庫
 
-EXIT;
+EXIT`
+```
 
 回到shell模式
 
 //確認還原是否成功
 
-sudo mysql < /home/deployuser/linux_practice_bakup.sql
+`sudo mysql < /home/deployuser/linux_practice_bakup.sql`
 
 補充：
 
@@ -54,25 +56,27 @@ Q：輸入sudo mysql < /home/deployuser/linux_practice_bakup.sql出現ERROR 1046
 
 解法1：先手動建立資料庫在執行還原
 
-sudo mysql   //進入mysql模式
+`sudo mysql`   //進入mysql模式
 
+```bash
 CREATE DATABESE linux_practice;
 
 EXIT;
+```
 
-sudo mysql linux_practice < /home/deployuser/linux_practice_bakup.sql
+`sudo mysql linux_practice < /home/deployuser/linux_practice_bakup.sql`
 
 解法2：確認.sql裡有沒有CREATE DATABASE和USE語句
 
-grep -i “create database”/home/deployuser/linux_practice_bakup.sql
+`grep -i “create database”/home/deployuser/linux_practice_bakup.sql`
 
 如果以上指令輸入後沒出現CREATE DATABASE和USE語句代表備份十枚包含資料庫建立語句。
 
 若要讓mysqldump包含CREATE DATABESE和USE，可以在備份時加上—databases參數，如下：
 
-sudo mysqldump --databases linux_practice > linux_practice_bakup.sql
+`sudo mysqldump --databases linux_practice > linux_practice_bakup.sql`
 
 這樣在還原時就不用先建立資料庫，直接使用以下指令：
 
-sudo mysql < linux_practice_bakup.sql
+`sudo mysql < linux_practice_bakup.sql`
 

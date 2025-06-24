@@ -2,6 +2,7 @@
 
 一份簡單的自動化排程備份腳本
 
+```bash
 #!/bin/bash
 
 DB_NAME=”linux_practice”
@@ -31,22 +32,23 @@ echo “[$(date)] database backup failed”
 fi
 
 find “$BACKUP_DIR” -name “*.sql”-mtime +7 -exec rm{} \; >> “$LOG_FILE” 2>&1
+```
 
-chmod -x /home/deployuser/mysql_backup.sh   //給腳本執行權限
+`chmod -x /home/deployuser/mysql_backup.sh`   //給腳本執行權限
 
-crontab -e
+`crontab -e`
 
 //加入以下指令，代表每天凌晨2:30執行這份腳本
 
 30 2 * * * /home/deployuser/mysql_bakup_sh
 
-crontab -l   //檢查排程是否加入
+`crontab -l`   //檢查排程是否加入
 
 最後測試一下手動跑腳本是否正常
 
-sudo /home/deployuser/mysql_backup.sh
+`sudo /home/deployuser/mysql_backup.sh`
 
 補充：將.sql壓縮成.gz
 
-在腳本內加入gzip “$BACKUP_FILE”即可
+在腳本內加入`gzip “$BACKUP_FILE”`即可
 

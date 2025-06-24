@@ -65,9 +65,10 @@ sudo ufw deny 80   #封鎖原本的80 port
 sudo ufw allow 8080   #允許新的8080 port
 
 sudo ufw status numbered   #查看目前防火牆規則
+```
 
 Step 4：測試是否只有 8080 可連
-```
+
 `curl http://localhost:8080`    #測試新的port有沒有通
 
 正常會顯示nginx的畫面

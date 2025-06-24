@@ -2,7 +2,7 @@
 
 使用 dmesg 檢查核心錯誤
 
-dmesg -T | grep -iE “error|fail|usb|disk”
+`dmesg -T | grep -iE “error|fail|usb|disk”`
 
 -i：不區分大小寫
 
@@ -10,9 +10,9 @@ dmesg -T | grep -iE “error|fail|usb|disk”
 
 使用 smartctl 測試硬碟健康
 
-sudo apt install smartmontools
+`sudo apt install smartmontools`
 
-sudo smartctl -a /dev/sda
+`sudo smartctl -a /dev/sda`
 
 重點欄位：
 
@@ -24,6 +24,7 @@ SMART overall-health test result：PASSED 才正常
 
 撰寫硬體健康狀態腳本
 
+```bash
 #!/bin/bash
 
 TIMESTAMP=$(date +”%F %T”)
@@ -73,4 +74,4 @@ echo “”>> $LOG
 echo “[$TIMESTAMP]===磁碟檢查結束===”>> $LOG
 
 echo “” >> $LOG
-
+```

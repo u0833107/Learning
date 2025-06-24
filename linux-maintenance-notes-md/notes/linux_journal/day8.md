@@ -2,21 +2,24 @@
 
 安裝
 
-sudo apt update
+`sudo apt update`
 
-sudo apt install mysql-server
+`sudo apt install mysql-server`
 
-sudo systemctl status mysql   //檢查安裝是否成功，成功會看見active(running)
+`sudo systemctl status mysql`   //檢查安裝是否成功，成功會看見active(running)
 
 建立資料庫與資料表
 
-sudo mysql   //進入mysql視窗
+`sudo mysql`   //進入mysql視窗
 
+```bash
 CREATE DATABASE practice_linux;   //創一個叫做linux_practice的資料庫
 
-USE practice_linux;
+USE practice_linux;`
+
 
 //創建一個叫user的資料表(欄位包含id、姓名和信箱)
+
 
 CREATE TABLE users(
 
@@ -51,9 +54,11 @@ INSERT INTO users (name,email) VALUES (‘Charlie’,’charlie@example.com’);
 EX3：刪除一位 email 是 bob@example.com 的使用者
 
 DELETE FROM users WHERE email = ‘bob@example.com’;
+```
 
 補充：UPDATE
 
+```bash
 UPDATE 資料表名稱
 
 SET 欄位名稱 = 新值
@@ -85,4 +90,5 @@ SET name = ‘CHARLIE’,
 email = ‘charlie@linux.com’
 
 WHERE name = ‘Charlie’;
+```
 

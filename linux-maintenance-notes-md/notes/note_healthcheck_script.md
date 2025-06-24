@@ -1,13 +1,15 @@
 健康檢查與自動修復腳本 - 綜合維運實戰
- 腳本說明
+
+腳本說明
 
 本腳本會檢查兩個常見服務（nginx 與 mysql）的狀態：
 - 若服務異常，會自動重啟，並記錄重啟次數
 - 若重啟超過 3 次，模擬發出警告通知
 - 額外記錄系統的記憶體剩餘狀態與前五名 CPU 使用程序
 
-腳本內容（health\_check.sh）
+腳本內容（health_check.sh）
 
+```bash
 #!/bin/bash
 
 LOG="/home/milly/health\_check.log"
@@ -69,8 +71,12 @@ ps aux --sort=-%cpu | head -n 6 >> $LOG
 echo "" >> $LOG
 echo "[$TIMESTAMP] 健康檢查結束" >> $LOG
 echo "" >> $LOG
+```
 
 建議排程方式
-可透過 /etc/crontab 加入以下行，每 10 分鐘執行一次：
-*/10 * * * * milly /home/milly/health\_check.sh
+
+可透過 `/etc/crontab` 加入以下行，每 10 分鐘執行一次：
+
+*/10 * * * * milly /home/milly/health_check.sh
+
 （需確保 cron 服務啟動且腳本有執行權限）

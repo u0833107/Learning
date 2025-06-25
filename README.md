@@ -8,9 +8,14 @@
 
 ```
 linux-maintenance-notes/
-├── reports/           # 系統事件報告
-├── troubleshooting/   # 排查記錄
-├── notes/             # 筆記與工具對照整理
+├── notes/ # 學習筆記與工具指令整理
+│ ├── note_xxx.md
+│ └── linux_journal/ # Linux 每日學習實作紀錄（Day 1～22）
+├── reports/ # 系統事件模擬報告（含圖文說明）
+│ ├── images/ # 報告內使用的截圖資源
+│ └── report_xxx.md
+├── troubleshooting/ # 額外補充與問題排查筆記
+└── README.md # 專案介紹與資料索引
 ```
 
 ---

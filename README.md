@@ -24,9 +24,10 @@ linux-maintenance-notes/
 
 | 檔案 | 說明 |
 |------|------|
-| `系統維運事件報告_nginx無法啟動.md` | 模擬 nginx 配置錯誤導致服務失敗，排查與修復流程 |
-| `系統維運事件報告_Cron任務未執行.md` | crontab 沒有正確執行排程的完整排查與處理紀錄 |
-| `系統維運事件報告_MySQL無法連線.md` | MySQL 遠端連線問題處理流程與授權修復紀錄 |
+| `系統維運事件報告_nginx無法啟動.md`(reports/report_nginx_failed_to_start.md) | 模擬 nginx 配置錯誤導致服務失敗，排查與修復流程 |
+| `系統維運事件報告_nginx異常.md`(reports/report_nginx_unstable_issue.md) | 模擬 nginx 網站無法連線問題處理流程與修復紀錄 |
+| `系統維運事件報告_Cron任務未執行.md`(reports/report_cron_missed.md) | crontab 沒有正確執行排程的完整排查與處理紀錄 |
+| `系統維運事件報告_MySQL無法連線.md`(reports/report_mysql_connection_failed.md) | MySQL 遠端連線問題處理流程與授權修復紀錄 |
 
 ---
 

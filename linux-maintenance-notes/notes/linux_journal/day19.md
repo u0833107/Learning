@@ -1,4 +1,4 @@
-# Day19
+# Day19 MySQL權限與使用者管理
 
 建立新使用者
 `CREATE USER ‘appuser’@’localhost’IDENTIFIED ‘password123’;`

@@ -1,4 +1,4 @@
-# Day3
+# Day3 Linux軟體與服務管理
 
 `sudo apt install htop`：安裝htop安裝包
 

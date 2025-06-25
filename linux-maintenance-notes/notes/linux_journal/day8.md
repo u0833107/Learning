@@ -1,4 +1,4 @@
-# Day8
+# Day8 MySQL安裝與基本操作(For Linux維運)
 
 安裝
 

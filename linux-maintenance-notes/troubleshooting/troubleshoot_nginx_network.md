@@ -1,12 +1,12 @@
-網站無法連線 - 模擬維運排查紀錄
+# 網站無法連線 - 模擬維運排查紀錄
 
-Step 1：模擬錯誤情境
+### Step 1：模擬錯誤情境
 
 故意停掉 nginx 服務：
 
 `sudo systemctl stop nginx`
 
-Step 2：測試網站狀態
+### Step 2：測試網站狀態
 
 使用 curl 測試本機網站連線：
 
@@ -16,11 +16,11 @@ Step 2：測試網站狀態
 
 Failed to connect to localhost port 80 after 0 ms: Couldn't connect to server
 
-Step 3：進行排查
+### Step 3：進行排查
 
 依照維運排查邏輯逐項確認：
 
-Step 4：問題修復與驗證
+### Step 4：問題修復與驗證
 
 啟動 nginx：
 

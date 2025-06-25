@@ -1,12 +1,12 @@
-MySQL 3306 未監聽問題 - 完整排查與修正報告
+# MySQL 3306 未監聽問題 - 完整排查與修正報告
 
 
-問題描述
+### 問題描述
 
 在 Ubuntu 虛擬機中，MySQL 雖然服務狀態為 active，但使用 ss/netstat 等工具確認時，發現埠 3306 並未監聽，導致無法從本機或其他主機連線。
 
 
-初步確認項目
+### 初步確認項目
 
 - MySQL 為 active (sudo systemctl status mysql)
 
@@ -17,7 +17,7 @@ MySQL 3306 未監聽問題 - 完整排查與修正報告
 - ss -tulnp 未顯示 3306 被監聽
 
 
-排查與修正步驟
+### 排查與修正步驟
 
 1. 編輯 /etc/mysql/mysql.conf.d/mysqld.cnf
 
@@ -34,7 +34,7 @@ MySQL 3306 未監聽問題 - 完整排查與修正報告
 4. 使用 `sudo ss -tulnp | grep 3306` 驗證監聽狀態
 
 
-修正結果
+### 修正結果
 
 修正後再次執行 ss 顯示：0.0.0.0:3306 被 mysqld 正常監聽，表示 MySQL 已成功開啟 TCP 連線功能，允許內網主機遠端連線。
 

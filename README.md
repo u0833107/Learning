@@ -33,7 +33,7 @@ linux-maintenance-notes/
 
 ## 🛠 Troubleshooting - 問題排查記錄
 
-| 檔案 | 說明 |
+| 主題 | 說明 |
 |------|------|
 | [`MySQL_Socket_異常排查筆記`](linux-maintenance-notes/troubeshooting/troubleshoot_mysql_socket_error.md) | 連線錯誤時出現 socket 找不到問題的排查流程 |
 | [`MySQL無法啟動與AppArmor權限修復流程筆記`](linux-maintenance-notes/troubleshooting/troubleshoot_mysql_apparmor.md) | 虛擬機環境中 AppArmor 阻擋導致無法啟動 MySQL |
@@ -46,7 +46,7 @@ linux-maintenance-notes/
 
 ## 📚 Notes - 技術筆記與整理
 
-| 檔案 | 說明 |
+| 主題 | 說明 |
 |------|------|
 | [`MySQL權限範圍對照表筆記`](linux-maintenance-notes/notes/note_mysql_grant_reference.md) | 對 MySQL 權限（READ / WRITE / ALL）分別整理與對照說明 |
 | [`crontab除錯總整理`](linux-maintenance-notes/notes/note_crontab_debug_summary.md) | 如何排查排程不執行？包含權限、格式與 sudo 問題 |

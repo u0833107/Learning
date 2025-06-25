@@ -1,15 +1,15 @@
-Day 12：Log 資料重複誤判排查筆記
+# Log資料重複誤判排查筆記
 
-問題現象
+### 問題現象
 
-在定時排程腳本 resource\_monitor.sh 執行後，觀察 log 檔時發現：
+在定時排程腳本 resource_monitor.sh 執行後，觀察 log 檔時發現：
 - log 看起來只有幾筆記錄，時間戳記重複
 - 懷疑 log 檔案被覆蓋或寫入失敗
 
 但實際上：log 實際有追加寫入，只是每筆輸出內容過於類似，造成誤判。
 
 
-關鍵原因解析
+### 關鍵原因解析
 
 排程腳本中這段會抓出 CPU 用量最高的 5 個行程：
 
@@ -26,7 +26,7 @@ grep "====" /home/milly/resource\_monitor.log
 若輸出為多筆不同時間，即代表 log 有正常追加。
 
 
-改進建議
+### 改進建議
 
 1. 增加 log 間隔行讓每段輸出更清楚：
 
@@ -34,14 +34,14 @@ echo -e "\n------------------------------\n" >> $LOG
 
 2. 改用「每次一檔案」的方式避免混淆：
 
-LOG="/home/milly/logs/resource\_$(date +%F-%H%M).log"
+LOG="/home/milly/logs/resource_$(date +%F-%H%M).log"
 
 3. log 檔案最後加尾註：
 
 echo "[Logged at $(date)]" >> $LOG
 
 
-小結
+### 小結
 
 log 寫入正常但內容類似，是維運監控中常見的「誤判問題」。
 只要加入時間標記或切分策略即可避免混淆。

@@ -1,6 +1,4 @@
-Windows學習日記
-
-Day1 Windows系統基礎維運
+# Windows系統基礎維運
 
 使用事件檢視器查看系統錯誤
 

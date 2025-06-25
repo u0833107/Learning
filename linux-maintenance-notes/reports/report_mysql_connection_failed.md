@@ -42,7 +42,7 @@ MySQL服務未啟動，導致無法透過預設 socket 成功建立本機連線�
 
 ![mysql服務狀態顯示inactive(dead)](images/mysql_connect_failed.png)
 
-(圖一)mysql服務狀態顯示inactive(dead)
+<p align="center">(圖一)mysql服務狀態顯示inactive(dead)</p>
 
 
 ### 後續建議

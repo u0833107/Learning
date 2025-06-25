@@ -1,15 +1,15 @@
-系統維運事件報告：MySQL無法連線
+# 系統維運事件報告：MySQL無法連線
 
-發生時間
+### 發生時間
 
 2025/06/04 16:12:39(UTC+8)
 
 
-問題現象
+### 問題現象
 
 使用者嘗試連線MySQL失敗並且出現Can’t connect to local MySQL server through socket ‘/var/run/mysqld/mysqld.sock’(2)錯誤訊息
 
-排查過程
+### 排查過程
 
 利用systemctl指令確認MySQL服務狀態
 
@@ -20,12 +20,11 @@
 初步排除設定錯誤與權限問題，判斷為服務未執行所致
 
 
-問題原因
+### 問題原因
 
 MySQL服務未啟動，導致無法透過預設 socket 成功建立本機連線。
 
-
-解決方式
+### 解決方式
 
 使用下列指令啟動mysql服務
 
@@ -37,8 +36,7 @@ MySQL服務未啟動，導致無法透過預設 socket 成功建立本機連線�
 
 再次使用mysql指令已可以正常連線
 
-
-證據記錄
+### 證據記錄
 
 1.mysql服務狀態顯示inactive(dead)
 
@@ -47,7 +45,7 @@ MySQL服務未啟動，導致無法透過預設 socket 成功建立本機連線�
 (圖一)mysql服務狀態顯示inactive(dead)
 
 
-後續建議
+### 後續建議
 
 1. 建議設定MySQL為開機時自動啟動服務
 

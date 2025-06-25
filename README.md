@@ -22,12 +22,12 @@ linux-maintenance-notes/
 
 ## 📝 Reports - 系統維運事件報告
 
-| 檔案 | 說明 |
+| 主題 | 說明 |
 |------|------|
-| `系統維運事件報告_nginx無法啟動.md`(reports/report_nginx_failed_to_start.md) | 模擬 nginx 配置錯誤導致服務失敗，排查與修復流程 |
-| `系統維運事件報告_nginx異常.md`(reports/report_nginx_unstable_issue.md) | 模擬 nginx 網站無法連線問題處理流程與修復紀錄 |
-| `系統維運事件報告_Cron任務未執行.md`(reports/report_cron_missed.md) | crontab 沒有正確執行排程的完整排查與處理紀錄 |
-| `系統維運事件報告_MySQL無法連線.md`(reports/report_mysql_connection_failed.md) | MySQL 遠端連線問題處理流程與授權修復紀錄 |
+| [`系統維運事件報告_nginx無法啟動`](reports/report_nginx_failed_to_start.md) | 模擬 nginx 配置錯誤導致服務失敗，排查與修復流程 |
+| [`系統維運事件報告_nginx異常`](reports/report_nginx_unstable_issue.md) | 模擬 nginx 網站無法連線問題處理流程與修復紀錄 |
+| [`系統維運事件報告_Cron任務未執行`](reports/report_cron_missed.md) | crontab 沒有正確執行排程的完整排查與處理紀錄 |
+| [`系統維運事件報告_MySQL無法連線`](reports/report_mysql_connection_failed.md) | MySQL 遠端連線問題處理流程與授權修復紀錄 |
 
 ---
 
@@ -35,9 +35,12 @@ linux-maintenance-notes/
 
 | 檔案 | 說明 |
 |------|------|
-| `MySQL_Socket_異常排查筆記.md` | 連線錯誤時出現 socket 找不到問題的排查流程 |
-| `MySQL無法啟動與AppArmor權限修復流程筆記.md` | 虛擬機環境中 AppArmor 阻擋導致無法啟動 MySQL |
-| `nginx_網路問題排查筆記.md` | 使用 ss / curl / ufw 解決無法連接 nginx 的問題 |
+| [`MySQL_Socket_異常排查筆記`](troubeshooting/troubleshoot_mysql_socket_error.md) | 連線錯誤時出現 socket 找不到問題的排查流程 |
+| [`MySQL無法啟動與AppArmor權限修復流程筆記`](troubleshooting/troubleshoot_mysql_apparmor.md) | 虛擬機環境中 AppArmor 阻擋導致無法啟動 MySQL |
+| [`MySQL 3306 未監聽問題`](troubleshooting/troubleshoot_mysql_3306_bind.md) | MySQL 3306 未監聽問題排查修正 |
+| [`MySQL_遠端連線_10060_錯誤排查筆記`](troubleshooting/troubleshoot_mysql_remote_10060.md) | MySQL 遠端連線錯誤排查 |
+| [`nginx_網路問題排查筆記`](troubleshooting/troubleshoot_nginx_network.md) | 使用 ss / curl / ufw 解決無法連接 nginx 的問題 |
+| [`Log重複誤判排查筆記`](troubleshooting/troubleshoot_log_duplicate.md) | Log資料重複誤判排查
 
 ---
 
@@ -45,9 +48,11 @@ linux-maintenance-notes/
 
 | 檔案 | 說明 |
 |------|------|
-| `MySQL權限範圍對照表筆記.md` | 對 MySQL 權限（READ / WRITE / ALL）分別整理與對照說明 |
-| `crontab除錯總整理.md` | 如何排查排程不執行？包含權限、格式與 sudo 問題 |
-| `修改Port_Forwarding設定筆記.md` | VirtualBox 如何設定 port 轉發供外部連入 VM |
+| [`MySQL權限範圍對照表筆記`](notes/note_mysql_grant_reference.md) | 對 MySQL 權限（READ / WRITE / ALL）分別整理與對照說明 |
+| [`crontab除錯總整理`](notes/note_crontab_debug_summary.md) | 如何排查排程不執行？包含權限、格式與 sudo 問題 |
+| [`修改Port_Forwarding設定筆記`](notes/note_port_forwarding.md) | VirtualBox 如何設定 port 轉發供外部連入 VM |
+| [`Windows學習日記`](notes/note_windows_learning_journal.md) | Windows學習記錄
+| [`綜合維運實戰`](notes/note_healthcheck_script.md) | 健康檢查與自動修復腳本 |
 
 ---
 

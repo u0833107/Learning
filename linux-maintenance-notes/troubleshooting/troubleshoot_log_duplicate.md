@@ -21,7 +21,7 @@
 
 可透過 grep 每次產生的時間標記行來確認是否為不同筆：
 
-grep "====" /home/milly/resource\_monitor.log
+`grep "====" /home/milly/resource_monitor.log`
 
 若輸出為多筆不同時間，即代表 log 有正常追加。
 

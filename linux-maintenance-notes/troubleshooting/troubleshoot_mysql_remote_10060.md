@@ -19,7 +19,7 @@
 在 NAT 模式中，主機無法直接透過 10.0.2.15（虛擬機內部 IP）連線。
 原本的 Port Forwarding 將主機連接埠也設為 3306，導致衝突或無作用。
 
-解決方法
+### 解決方法
 1. 修改 VirtualBox Port Forwarding 設定：
  - 名稱：mysql
  - 協定：TCP

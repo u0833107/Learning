@@ -15,7 +15,7 @@ MySQL 的啟動條件僅檢查主程式 mysqld 是否成功執行。
 
 但 client 端（如 mysql CLI）無法透過指定 socket 連線，就會報錯。
 
-驗證方式
+### 驗證方式
 1. 確認服務是否啟動：
  `sudo systemctl status mysql`
 2. 嘗試透過 socket 登入：

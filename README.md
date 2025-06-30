@@ -51,7 +51,6 @@ linux-maintenance-notes/
 | [`MySQL權限範圍對照表筆記`](linux-maintenance-notes/notes/note_mysql_grant_reference.md) | 對 MySQL 權限（READ / WRITE / ALL）分別整理與對照說明 |
 | [`crontab除錯總整理`](linux-maintenance-notes/notes/note_crontab_debug_summary.md) | 如何排查排程不執行？包含權限、格式與 sudo 問題 |
 | [`修改Port_Forwarding設定筆記`](notes/note_port_forwarding.md) | VirtualBox 如何設定 port 轉發供外部連入 VM |
-| [`Windows學習日記`](linux-maintenance-notes/notes/note_windows_learning_journal.md) | Windows學習記錄
 | [`綜合維運實戰`](linux-maintenance-notes/notes/note_healthcheck_script.md) | 健康檢查與自動修復腳本 |
 
 ---

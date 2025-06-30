@@ -22,7 +22,7 @@
 - [Day14：Linux網路指令與防火牆排查](day14.md)
 - [Day15：作業系統原理與基本概念補充](day15.md)
 - [Day16：Windows系統基礎維運]
-- [Day17：Windows PowerShell任務自動化]()
+- [Day17：Windows PowerShell任務自動化]
 - [Day18：模擬網路問題排查與修復](day18.md)
 - [Day19：MySQL 權限與使用者管理](day19.md)
 - [Day20：MySQL 資安與遠端控制](day20.md)

@@ -9,13 +9,26 @@
 ```
 linux-maintenance-notes/
 ├── notes/ # 學習筆記與工具指令整理
-│ ├── note_xxx.md
-│ └── linux_journal/ # Linux 每日學習實作紀錄（Day 1～22）
+│ ├── note_crontab_debug_summary.md
+│ ├── note_healthcheck_script.md
+│ ├── note_mysql_grant_reference.md
+│ ├── note_port_forwarding.md
+│ └── linux_journal/ # Linux 每日學習實作紀錄（Day 01～Day 22）
+│ ├── day01.md
+│ ├── day02.md
+│ └── ...
 ├── reports/ # 系統事件模擬報告（含圖文說明）
 │ ├── images/ # 報告內使用的截圖資源
-│ └── report_xxx.md
+│ ├── report_cron_task_missed.md
+│ ├── report_mysql_connection_failed.md
+│ ├── report_nginx_failed_to_start.md
+│ └── report_nginx_unstable_issue.md
 ├── troubleshooting/ # 額外補充與問題排查筆記
-└── README.md # 專案介紹與資料索引
+├── windows-journal/ # Windows 每日學習實作紀錄
+│ ├── README.md
+│ ├── day01.md
+│ └── day02.md
+└── README.md # 主專案介紹與資料導覽
 ```
 
 ---

@@ -1,4 +1,4 @@
-# Day15｜作業系統原理與基本概念補充
+# Day15 作業系統原理與基本概念補充
 
 ### 什麼是作業系統？核心職責？
 
@@ -15,6 +15,7 @@ Q2： 核心（Kernel）與使用者空間（User space）的差異
 權限和功能不同。
 
 |         項目      |     Kernel Space（核心空間） |     User Space（使用者空間) |
+|:-----------------:|:----------------------------:|:---------------------------:|
 |         權限      |           高(ring 3)         |          低(ring 0)         |
 |       負責範圍    |      控制硬體、系統資源管理  |        執行一般應用程式     |
 |       錯誤影響    |       錯誤可能導致系統當機   |      錯誤僅影響該應用程式   |
@@ -48,33 +49,30 @@ Q3： 為什麼作業系統需要管理記憶體與處理程序？
 
 基本流程：
 
-Linux：BIOS/UEFI→Bootloader(GRUB) →Kernel→systemd(PID1)
-
-Windows：BIOS/UEFI→Boot Manager→winload.exe→ntoskrnl.exe
+- Linux：BIOS/UEFI→Bootloader(GRUB) →Kernel→systemd(PID1)
+- Windows：BIOS/UEFI→Boot Manager→winload.exe→ntoskrnl.exe
 
 補充1：名詞解釋
 
-GRUB：Linux最常見的bootloader，也可以dual boot多系統
+- GRUB：Linux最常見的bootloader，也可以dual boot多系統
 
-systemd：是目前主流的init系統，管理服務與目標狀態(target)
+- systemd：是目前主流的init系統，管理服務與目標狀態(target)
 
-PID 1：是整個使用者空間的第一個process，當他掛了整個系統都會死掉
+- PID 1：是整個使用者空間的第一個process，當他掛了整個系統都會死掉
 
 補充2：什麼是init
 
-Init是initialization的縮寫，意思是初始化程序
+- Init是initialization的縮寫，意思是初始化程序
 
-Linux開機後的第一個使用者空間程式(PID 1)
+- Linux開機後的第一個使用者空間程式(PID 1)
 
-負責依序啟動各種系統服務與背景程序(daemon)
+- 負責依序啟動各種系統服務與背景程序(daemon)
 
-早期的Linux發行版常用的init系統是SysVinit(使用/etc/init.d腳本機制)
+- 早期的Linux發行版常用的init系統是SysVinit(使用/etc/init.d腳本機制)
 
 補充3：什麼是systemd
 
-Systemd是現今主流的init系統，設計用來取代傳統的SysVinit
-
-同樣是PID 1，但設計上更模組化、平行化、可追蹤與自我管理
+Systemd是現今主流的init系統，設計用來取代傳統的SysVinit，同樣是PID 1，但設計上更模組化、平行化、可追蹤與自我管理
 
 功能包含以下：
 
@@ -120,11 +118,11 @@ Q2：為什麼Context Switch太多會拖慢效能？
 
 當CPU要從一個process切換到另一個process時，要
 
-保存目前程序的狀態
+1. 保存目前程序的狀態
 
-載入新的程序的狀態
+2. 載入新的程序的狀態
 
-這段期間CPU無法執行實際的程式邏輯
+3. 這段期間CPU無法執行實際的程式邏輯
 
 這段切換工作就是間接成本(overhead)
 
@@ -136,5 +134,5 @@ Q2：為什麼Context Switch太多會拖慢效能？
 
 - 用vmstat可觀察上下文交換次數(CS欄位)
 
-`vmstat 1 5   #每秒輸出一次系統狀態，共五次`
+  `vmstat 1 5   #每秒輸出一次系統狀態，共五次`
 

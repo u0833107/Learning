@@ -13,23 +13,25 @@
 ## 🔍 排查過程  
 
 1. 查看 nginx 錯誤日誌：
+
    ```bash
    sudo less /var/log/nginx/error.log
    ```
    發現錯誤訊息：
-   ```
+
    connect() failed (111: Connection refused) while connecting to upstream
    ```
 
 2. 檢查 Flask 服務狀態：
-   ```bash
-   sudo systemctl status flask-app
-   ```
+
+   `sudo systemctl status flask-app`
+   
    顯示為 `inactive`，Flask 未啟動。
 
 ---
 
 ## ⚠️ 問題原因  
+
 Flask 應用未啟動，導致 nginx 嘗試將請求轉發至 5000 port 失敗，因此回傳 502 錯誤。
 
 ---
@@ -37,14 +39,14 @@ Flask 應用未啟動，導致 nginx 嘗試將請求轉發至 5000 port 失敗�
 ## 🛠️ 處理方法  
 
 1. 重啟 Flask 服務：
-   ```bash
-   sudo systemctl restart flask-app
-   ```
+   
+   `sudo systemctl restart flask-app`
+   
 
 2. 使用 curl 測試 API 是否恢復正常：
-   ```bash
-   curl http://localhost/api/order
-   ```
+   
+   `curl http://localhost/api/order`
+   
 
 3. 成功回傳 JSON 資料後，確認服務恢復正常。
 
@@ -52,10 +54,9 @@ Flask 應用未啟動，導致 nginx 嘗試將請求轉發至 5000 port 失敗�
 
 ## 📂 證據記錄  
 
-📎 **圖一：** `/var/log/nginx/error.log` 顯示：  
-```
-connect() failed (111: Connection refused) while connecting to upstream
-```
+![Log記錄](images/api_issue.png)
+(圖一)`/var/log/nginx/error.log`顯示：connect() failed (111: Connection refused) while connecting to upstream
+
 
 ---
 

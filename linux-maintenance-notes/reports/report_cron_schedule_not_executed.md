@@ -71,9 +71,9 @@ sudo journalctl -u cron | tail -n 20
 
 ## 證據記錄
 
-![log顯示錯誤訊息](/images/cron_schedule_not_execute.png)
-(圖一) log顯示錯誤訊息Error: bad username; while reading /etc/crontab
-(*system*) ERROR (Syntax error, this crontab file will be ignored)
+(/images/cron_schedule_not_execute.png)
+
+(圖一) log顯示錯誤訊息Error: bad username; while reading /etc/crontab(*system*) ERROR (Syntax error, this crontab file will be ignored)
 
 ## 後續建議
 

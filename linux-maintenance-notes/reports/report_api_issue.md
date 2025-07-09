@@ -20,7 +20,7 @@
    發現錯誤訊息：
 
    connect() failed (111: Connection refused) while connecting to upstream
-   ```
+   
 
 2. 檢查 Flask 服務狀態：
 
@@ -55,6 +55,7 @@ Flask 應用未啟動，導致 nginx 嘗試將請求轉發至 5000 port 失敗�
 ## 📂 證據記錄  
 
 ![Log記錄](images/api_issue.png)
+
 (圖一)`/var/log/nginx/error.log`顯示：connect() failed (111: Connection refused) while connecting to upstream
 
 

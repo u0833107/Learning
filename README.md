@@ -79,7 +79,7 @@ linux-maintenance-notes/
 
 | 系統類別 | 說明 |
 |--------|------|
-| [`Linux Journal`](linux-maintenance-notes/notes/linux_journal/README.md) | Day01～Day23 系統維運主題循序實作（包含備份、排程、資安、資源監控等） |
+| [`Linux Journal`](linux-maintenance-notes/notes/linux_journal/README.md) | Day01～Day25 系統維運主題循序實作（包含備份、排程、資安、資源監控等） |
 | [`Windows Journal`](linux-maintenance-notes/windows-journal/README.md) | Windows 排程、PowerShell 自動化與事件記錄分析 |
 
 
